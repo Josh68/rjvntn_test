@@ -1,7 +1,7 @@
 .container-fluid#page-main
   .row-fluid#banner
     .span4
-      a#logo.pull-left(href="/#"): img(width=305, height=63, src="/images/logo.jpg" alt="Rejuvenation Logo" title="Rejuvenation: Classic American Lighting And House Parts")
+      a#logo.pull-left(href="/#"): img(width=305, height=63, src="/images/logo.png" alt="Rejuvenation Logo" title="Rejuvenation: Classic American Lighting And House Parts")
         h1.img-replacement Rejuvenation: Classic American Lighting And House Parts
     .span8
       .row-fluid
@@ -54,40 +54,65 @@
           a(href="/#inspiration-advice") Inspirtation &amp; Advice
   .row-fluid#config
     .span4#photos
-      div#main-img
+      div#main-img.square-photo
         img(src="/images/pendant_light.jpg", width="99", height="312" alt="pendant light" title="Rose City Pendant Light")
       .row-fluid#gallery
         .span12
-          h4 Photo Gallery
+          h3 Photo Gallery
           - for (var i = 0; i < 3; i++)
             .row-fluid(class="row" + (i + 1))
               .span12
                 -for (var j = 0; j < 5; j++)
-                    span(class="img" + (j + 1)).gallery-img
+                    span(class="img" + (j + 1)).gallery-img.square-photo
     .span8#product-options
       h2#product-name Rose City
-      ol#breadcrumbs(class="list-inline nav")
-        li
-          a(href="/#rose-city/start") starting point
-        li
-          a(href="/#rose-city/finish") finish
-        li
-          a(href="/#rose-city/shade") shade
-        li
-          a(href="/#rose-city/length") length
-        li
-          a(href="/#rose-city/socket") socket
-        li
-          a(href="/#rose-city/switch") switch
-        li
-          a(href="/#rose-city/ceiling-mount") ceiling mount
-        li
-          a(href="/#rose-city/review") review choices
-      .row-fluid#options-grid
-        .span8#options-visualize
-          - for (var i = 0; i < 2; i++)
-            .row-fluid(class="row" + (k + 1))
-              .span12
-                -for (var j = 0; j < 3; j++)
-                  span(class="img" + (l + 1)).options-img
-        .span4#purchase-help
+      div#options-container
+        ol#breadcrumbs(class="breadcrumb")
+          li.active
+            a(href="/#rose-city/start") starting point
+            span.divider 
+              i.icon-chevron-right
+          li
+            a(href="/#rose-city/finish") finish
+            span.divider 
+              i.icon-chevron-right
+          li
+            a(href="/#rose-city/shade") shade
+            span.divider 
+              i.icon-chevron-right
+          li
+            a(href="/#rose-city/length") length
+            span.divider 
+              i.icon-chevron-right
+          li
+            a(href="/#rose-city/socket") socket
+            span.divider 
+              i.icon-chevron-right
+          li
+            a(href="/#rose-city/switch") switch
+            span.divider 
+              i.icon-chevron-right
+          li
+            a(href="/#rose-city/ceiling-mount") ceiling mount
+            span.divider 
+              i.icon-chevron-right
+          li
+            a(href="/#rose-city/review") review choices
+        .row-fluid#options-grid
+          h3 Choose A Starting Point
+          .span10#options-visualize
+            - for (var k = 0; k < 2; k++)
+              .row-fluid(class="row" + (k + 1))
+                .span12
+                  ul.list-inline
+                    //each val in ["string", "string", "string"]
+                    -for (var l = 0; l < 3; l++)
+                      li.option-container
+                        span(class="img" + (l + 1)).options-img.square-photo
+                        ul.unstyled
+                          li Brushed Nickel
+                          li Classic 14in. Schoolhouse
+                          li Shade with Coffee
+                        p From 
+                          span.cost 207
+          .span2#purchase-help
