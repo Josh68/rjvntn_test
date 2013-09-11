@@ -1,19 +1,67 @@
-
-.navbar.navbar-fixed-top
-  .navbar-inner
-    .container
-      a.brand(href="#")= title
-      .nav-collapse
-        ul.nav
-          li.active
-            a(href="#") Home
-          li
-            a(href="#about") About
-          li
-            a(href="#contact") Contact
-.container
-  .hero-unit
-    h1 Hello, World!
-    p This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-    p
-      a.btn.btn-primary.btn-large(href="#") Lean more >>
+.container-fluid#page-main
+  .row-fluid#banner
+    .span4
+      a#logo.pull-left(href="/#"): img(width=305, height=63, src="/images/logo_transparent.png" alt="Rejuvenation Logo" title="Rejuvenation: Classic American Lighting And House Parts")
+        h1.img-replacement Rejuvenation: Classic American Lighting And House Parts
+    .span8
+      .row-fluid
+        .span8#quick-navs
+          ul(class="list-inline nav")
+            li
+              a(href="/#log-out") Sign Out
+            li
+              a(href="/#phone") 1.888.401.1900
+            li
+              a(href="/#chat") Live Chat
+            li
+              a(href="/#trade") For The Trade
+            li
+              a(href="/#wish-list") Wish List (1)
+          ul(class="list-inline nav")
+            li
+              a(href="#about") About Us
+            li
+              a(href="#stores") Our Stores
+            li
+              a(href="#customer-service") Customer Service
+        .span4      
+          #cart
+            i.icon-shopping-cart
+            ul.list-inline
+              li
+                a#my-cart(href="/#cart-contents") my cart: 4 items
+              li
+                a#checkout(href="checkout") checkout
+          form#search
+            input(type="text", id="searchbox")
+            button.btn(type="submit") Search
+  .row-fluid
+    .span12
+      ul#main-nav(class="list-inline nav")
+        li
+          a(href="/#lighting") Lighting
+        li
+          a(href="/#hardware") Hardware &amp; House Parts
+        li
+          a(href="/#collections") Collections
+        li
+          a(href="/#rooms") Rooms
+        li
+          a(href="/#restored-antiques") Restored Antiques
+        li
+          a(href="/#whats-new") What's New
+        li
+          a(href="/#inspiration-advice") Inspirtation &amp; Advice
+  .row-fluid
+    .span4
+      div.img-box
+        img(src="/images/pendant_light.png", width="", height="" alt="pendant light" title="Rose City Pendant Light")
+      .row-fluid
+        .span12
+          h4 Image Gallery
+          - for (var i = 0; i < 3; i++)
+            .row-fluid(class="row" + (i + 1))
+              .span12
+                -for (var j = 0; j < 5; j++)
+                    span(class="img" + (j + 1)).gallery-img
+    .span8
