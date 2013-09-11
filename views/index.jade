@@ -1,12 +1,12 @@
 .container-fluid#page-main
   .row-fluid#banner
     .span4
-      a#logo.pull-left(href="/#"): img(width=305, height=63, src="/images/logo_transparent.png" alt="Rejuvenation Logo" title="Rejuvenation: Classic American Lighting And House Parts")
+      a#logo.pull-left(href="/#"): img(width=305, height=63, src="/images/logo.jpg" alt="Rejuvenation Logo" title="Rejuvenation: Classic American Lighting And House Parts")
         h1.img-replacement Rejuvenation: Classic American Lighting And House Parts
     .span8
       .row-fluid
         .span8#quick-navs
-          ul(class="list-inline nav")
+          ul#customer-nav(class="list-inline nav")
             li
               a(href="/#log-out") Sign Out
             li
@@ -52,16 +52,42 @@
           a(href="/#whats-new") What's New
         li
           a(href="/#inspiration-advice") Inspirtation &amp; Advice
-  .row-fluid
-    .span4
-      div.img-box
-        img(src="/images/pendant_light.png", width="", height="" alt="pendant light" title="Rose City Pendant Light")
-      .row-fluid
+  .row-fluid#config
+    .span4#photos
+      div#main-img
+        img(src="/images/pendant_light.jpg", width="99", height="312" alt="pendant light" title="Rose City Pendant Light")
+      .row-fluid#gallery
         .span12
-          h4 Image Gallery
+          h4 Photo Gallery
           - for (var i = 0; i < 3; i++)
             .row-fluid(class="row" + (i + 1))
               .span12
                 -for (var j = 0; j < 5; j++)
                     span(class="img" + (j + 1)).gallery-img
-    .span8
+    .span8#product-options
+      h2#product-name Rose City
+      ol#breadcrumbs(class="list-inline nav")
+        li
+          a(href="/#rose-city/start") starting point
+        li
+          a(href="/#rose-city/finish") finish
+        li
+          a(href="/#rose-city/shade") shade
+        li
+          a(href="/#rose-city/length") length
+        li
+          a(href="/#rose-city/socket") socket
+        li
+          a(href="/#rose-city/switch") switch
+        li
+          a(href="/#rose-city/ceiling-mount") ceiling mount
+        li
+          a(href="/#rose-city/review") review choices
+      .row-fluid#options-grid
+        .span8#options-visualize
+          - for (var i = 0; i < 2; i++)
+            .row-fluid(class="row" + (k + 1))
+              .span12
+                -for (var j = 0; j < 3; j++)
+                  span(class="img" + (l + 1)).options-img
+        .span4#purchase-help

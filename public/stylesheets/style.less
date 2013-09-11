@@ -13,13 +13,22 @@
 @iconSpritePath: "/images/bootstrap/glyphicons-halflings.png";
 @iconWhiteSpritePath:     "/images/bootstrap/glyphicons-halflings-white.png";
 
+body {
+	padding-top: 10px;
+}
+
 /*--- UTILITY ---*/
 .img-replacement {
 	text-indent: -9999px;
 }
 
+/*--- FONTS ---*/
 body {
-	padding-top: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #949494;
+	a {
+		color: #949494;
+	}
 }
 
 #page-main.container-fluid {
@@ -33,40 +42,61 @@ body {
 #banner {
 	height: 100px;
 	position: relative;
-}
-
-	#banner #quick-navs {
+	#quick-navs {
 		text-align: center;
 	}
+}
+
+#customer-nav.list-inline li {
+	border-left: 1px solid #949494;
+	&:first-child {
+		border-left: 0 none;
+	}
+}
 
 #cart {
 	background-color: #E5E5E5;
 	padding: 10px;
 	position: absolute;
 	right: 0;
-	top: 0;
-}
-	#cart ul {
+	top: -10px;
+	ul {
 		margin-left: 0;
 		display: inline;
 	}
-	/*--- Search ---*/
-	#search {
-		position: absolute;
-		bottom: 0;
-		right: 0;
+}
+
+#search {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	input {
+		margin-bottom: 0;
 	}
-		#search input {
-			margin-bottom: 0;
-		}
+}
+		
+
+/*--- MAIN NAV ---*/
+#main-nav {
+	text-transform: uppercase;
+	font-weight: bold;
+}
 
 /*--- FORMS ---*/
 input[type="text"]>button {
 	margin-left: 10px;
 }
 
+/*--- PRODUCT CONFIG ---*/
+#config {
+	position: relative;
+}
+
 /*--- PHOTOS ---*/
-.img-box {
+#photos {
+	height: 100%;
+}
+#main-img {
 	background-color: #CCC;
 	border: 1px solid #BCBCBC;
 	width: 316px;
@@ -75,13 +105,37 @@ input[type="text"]>button {
 	padding-top: 4px;
 }
 .gallery-img {
+	@calc-dim: calc(~'18.4% - 2px');
 	background-color: #000;
 	border: 1px solid #000;
-	width: 18%;
+	width: @calc-dim;
 	display: inline-block;
-	margin-left: 1%;
-	height: 57px;
-}
-	.gallery-img:first-child {
+	margin-left: 2%;
+	/*height: 57px;*/
+	position: relative;
+	height: 0;
+	padding-bottom: @calc-dim; /*Testing http://stackoverflow.com/questions/5445491/height-equal-to-dynamic-width-css-fluid-layout*/
+	&:first-child {
 		margin-left: 0;
 	}
+}
+#gallery {
+	bottom: 0;
+	left: 0;
+	margin-top: 10px;
+}
+.options-img {
+	
+}
+
+/*--- BOOTSTRAP OVERRIDES ---*/
+.list-inline.nav {
+	 li{
+	 	&:first-child {
+	 		padding-left: 0;
+	 	}
+	 	&:last-child {
+	 		padding-right: 0;
+	 	}
+	 }
+}

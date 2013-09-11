@@ -4226,12 +4226,20 @@ a.badge:hover {
   padding-bottom: 40px;
 }*/
 /*@import "responsive.less";*//*responsive removed*/
+body {
+  padding-top: 10px;
+}
 /*--- UTILITY ---*/
 .img-replacement {
   text-indent: -9999px;
 }
+/*--- FONTS ---*/
 body {
-  padding-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #949494;
+}
+body a {
+  color: #949494;
 }
 #page-main.container-fluid {
   width: 1000px;
@@ -4246,18 +4254,23 @@ body {
 #banner #quick-navs {
   text-align: center;
 }
+#customer-nav.list-inline li {
+  border-left: 1px solid #949494;
+}
+#customer-nav.list-inline li:first-child {
+  border-left: 0 none;
+}
 #cart {
   background-color: #E5E5E5;
   padding: 10px;
   position: absolute;
   right: 0;
-  top: 0;
+  top: -10px;
 }
 #cart ul {
   margin-left: 0;
   display: inline;
 }
-/*--- Search ---*/
 #search {
   position: absolute;
   bottom: 0;
@@ -4266,12 +4279,24 @@ body {
 #search input {
   margin-bottom: 0;
 }
+/*--- MAIN NAV ---*/
+#main-nav {
+  text-transform: uppercase;
+  font-weight: bold;
+}
 /*--- FORMS ---*/
 input[type="text"] > button {
   margin-left: 10px;
 }
+/*--- PRODUCT CONFIG ---*/
+#config {
+  position: relative;
+}
 /*--- PHOTOS ---*/
-.img-box {
+#photos {
+  height: 100%;
+}
+#main-img {
   background-color: #CCC;
   border: 1px solid #BCBCBC;
   width: 316px;
@@ -4282,11 +4307,29 @@ input[type="text"] > button {
 .gallery-img {
   background-color: #000;
   border: 1px solid #000;
-  width: 18%;
+  width: calc(18.4% - 2px);
   display: inline-block;
-  margin-left: 1%;
-  height: 57px;
+  margin-left: 2%;
+  /*height: 57px;*/
+
+  position: relative;
+  height: 0;
+  padding-bottom: calc(18.4% - 2px);
+  /*Testing http://stackoverflow.com/questions/5445491/height-equal-to-dynamic-width-css-fluid-layout*/
+
 }
 .gallery-img:first-child {
   margin-left: 0;
+}
+#gallery {
+  bottom: 0;
+  left: 0;
+  margin-top: 10px;
+}
+/*--- BOOTSTRAP OVERRIDES ---*/
+.list-inline.nav li:first-child {
+  padding-left: 0;
+}
+.list-inline.nav li:last-child {
+  padding-right: 0;
 }
